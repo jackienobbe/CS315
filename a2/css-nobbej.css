@@ -1,0 +1,180 @@
+body{
+  font-family: 'Helvetica', sans-serif;
+}
+
+h1{
+  font-family: 'Didot', 'Prata', serif;
+  text-align: center;
+}
+
+h2{
+  font-family: 'Didot', 'Prata', serif;
+  font-size: 18pt;
+  margin-bottom: -5px;
+  /*text-align: center;*/
+}
+
+h3{
+  font-family: 'Didot', 'Prata', serif;
+  font-size: 18pt;
+  margin-bottom: -5px;
+}
+
+p{
+
+}
+
+a{
+  font-family: 'Didot', 'Prata', serif;
+}
+
+ul li {
+}
+
+#homePage{
+
+}
+
+#wrapper{
+  width: 50%;
+  margin: 0px auto;
+}
+
+#masthead{
+
+}
+
+#navContainer{
+
+}
+
+#navigation{
+  width: 100%;
+  /*background-color: cyan;*/
+  border-top: 1px black solid;
+  border-bottom: 1px black solid;
+  margin: 0px auto;
+
+}
+
+#navigation ul {
+  height: 40px;
+  display: inline-block;
+  margin: 0px 63px;
+  /*padding: 1px 1px;*/
+}
+
+#navigation ul li {
+  display: inline;
+  float: left;
+  list-style-type: none;
+  margin: 0px 12px;
+  padding: 13px 0px;
+  text-align: center;
+  vertical-align: bottom;
+  height: 40px;
+  width: 125px;
+}
+
+#navigation ul li a {
+  font-family: Didot, serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+}
+
+#navigation ul li a:hover{
+  height: 40px;
+  text-decoration: underline;
+}
+
+#content{
+
+}
+
+#profimage{
+  margin: 0px -5px 10px 100px;
+  float: left;
+}
+
+#professor h1 {
+  margin-bottom: -10px;
+  padding-top: 40px;
+}
+
+#professor h2 {
+  font-size: 13pt;
+  font-style: italic;
+  text-align: center;
+}
+
+#information{
+  display: block;
+  clear: both;
+  border-top: 1px solid black;
+}
+
+#office{
+  width: 70%;
+  margin: 0px auto;
+}
+
+#office ul li {
+  list-style-type: square;
+
+}
+#contact {
+  width: 70%;
+  margin: 0px auto;
+}
+
+#contact a {
+  color: #000;
+}
+
+
+.compact {
+  list-style-type: square;
+
+}
+
+.compact ul {
+  /*list-style-type: square;*/
+
+}
+
+.compact ul li {
+    /*list-style-type: square;*/
+}
+
+.compact ul li a {
+  /*list-style-type: square;*/
+
+}
+
+.compact li ul li {
+  list-style-type: none;
+  font-family: monospace;
+  margin: 0px -20px;
+}
+
+#announce{
+  width: 70%;
+  margin: 0px auto;
+}
+
+#announce h3 {
+  /*text-align: center;*/
+}
+
+#announce ul li {
+  list-style-type: square;
+
+}
+
+#classinfo h1 {
+  /*text-align: left;*/
+}
+#classinfo ul li {
+  margin-left: 40px;
+}
