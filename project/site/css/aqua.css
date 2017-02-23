@@ -82,7 +82,7 @@ a {
   list-style-type: none;
 }
 
-#nav ul li a:hover{
+#nav ul li a:hover, #nav ul li a:active{
   text-decoration: none;
 }
 
@@ -106,7 +106,7 @@ a {
   position: relative;
   top: -1px;
 }
-.new label {
+.new label, .details label {
   font-weight: bold;
   margin-right: 10px;
 }
