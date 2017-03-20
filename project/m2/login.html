@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+  <head>
+
+    <title>aqua-archive // login</title>
+    <link type="text/css" rel="stylesheet" href="css/aqua.css" />
+    <meta charset="UTF-8">
+
+  </head>
+
+  <body>
+
+    <div id="wrapper">
+      <div id="header-wrapper">
+        <div id="header">
+          <a href="index.html"><img src="img/logo.jpg" alt="aquadome-logo" id="logo"></a>
+          <h1>Aqua-Archive</h1>
+        </div>
+        <div id="nav">
+          <ul>
+            <li><a href="newShow.html">New Show</a></li>
+            <li><a href="newBand.html">New Band</a></li>
+            <li><a href="dispBands.html">Bands</a></li>
+            <li><a href="dispShows.html">Shows</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="content">
+        <form class="login" action="php/login.php" method="post">
+          <div class="form-group"><label>username</label><input type="text" name="username" /></div>
+          <div class="form-group"><label>password</label><input type="password" name="password" /></div>
+
+          <input type="submit" name="submit" value="Let's Go"/>
+        </form>
+      </div>
+    </div>
+
+  </body>
+
+</html>

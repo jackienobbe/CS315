@@ -1,0 +1,4 @@
+PROJECT NOTES
+
+* word bank / open entry of text
+  * after space, turn into a tag, essentially
