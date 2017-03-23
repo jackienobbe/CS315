@@ -1,4 +1,6 @@
 <?php
+  ob_start();
+  session_start();
 
   // if (isset($_SESSION["username"]) != "")
   // {
@@ -14,12 +16,20 @@
   if(!strcmp($username, "aquadome") && !strcmp($password, "password"))
   {
     $_SESSION['currentUser'] = $username;
-    header("Location: ../index.php");  //redirect to index.php
-
+    if(isset($_POST['ref']))
+    {
+      $ref = "/newBand.php"; //$_POST['ref'];
+      header("Location: ../$ref");  //redirect to index.php
+    }
+    else
+    {
+      header("Location: ../index.php");
+    }
   }
   else
   {
-    header("Location: login.html"); //try again
+    $_POST['error'] = 1; //"Try that again...";
+    header("Location: ../login.php"); //try again
   }
 
 ?>

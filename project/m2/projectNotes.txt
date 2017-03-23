@@ -2,3 +2,7 @@ PROJECT NOTES
 
 * word bank / open entry of text
   * after space, turn into a tag, essentially
+
+* used php
+  * include header file
+  * submit forms for adding bands and shows

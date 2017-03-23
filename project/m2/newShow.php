@@ -10,22 +10,8 @@
   <body>
 
     <div id="wrapper">
-      <div id="header-wrapper">
-        <div id="header">
-          <a href="index.html"><img src="img/logo.jpg" alt="aquadome-logo" id="logo"></a>
-          <h1>Aqua-Archive</h1>
-        </div>
-        <div id="nav">
-          <ul>
-            <li><a href="newShow.html">New Show</a></li>
-            <li><a href="newBand.html">New Band</a></li>
-            <li><a href="dispBands.html">Bands</a></li>
-            <li><a href="dispShows.html">Shows</a></li>
-          </ul>
-        </div>
-      </div>
-
-        <div id="content">
+      <?php include('includes/header.php'); ?>
+      <div id="content">
           <h2>Gotta New Show? </h2>
           <form class="new">
             <div class="form-group"><label>Name</label><input type="text" name="showName" /></div>
@@ -58,7 +44,7 @@
             </div>
 
             <input type="submit" name="submit" value="Let's Go"/>
-          </form>
+          </form> 
       </div>
     </div>
 
