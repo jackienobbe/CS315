@@ -20,7 +20,7 @@
             <div class="form-group"><label>$ Made</label><input type="text" name="profit" /></div>
             <div class="form-group"><label>Facebook Event</label><input type="text" name="fbevent"/></div>
             <div class="form-group"><label>Potluck?</label><input type="checkbox" name="putluck" value="yes" /></div>
-            <div class="form-group"><label>Planned By</label><input type="text" name="bandName"></div>
+            <div class="form-group"><label>Planned By</label><input type="text" name="planner"></div>
 
             <div class="form-group">
               <label>Cohesiveness</label><br/>
@@ -44,7 +44,7 @@
             </div>
 
             <input type="submit" name="submit" value="Let's Go"/>
-          </form> 
+          </form>
       </div>
     </div>
 
