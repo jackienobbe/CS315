@@ -161,7 +161,7 @@ function processYear(year){
       document.getElementById("errors").innerHTML =  err;
     }
 }
-function makeDate(date) {}
+function makeDate(date) {
   return getMonthName(date[0]) + " " + date[1] + ", " + date[2];
 }
 
