@@ -11,57 +11,67 @@ function processDates() {
     splitDate = verifyInputFormat(input2);
     validatedInput2 = formatDateArray(splitDate);
 
-    // date2 = [1,1,1950];
-    // date1 = [9,3,2001];
-    // dateDiff = calcDateDistance(date1, date2);
-
     dateDiff = calcDateDistance(validatedInput1, validatedInput2);
 
     place = document.getElementById("result");
-    // place.innerHTML = validatedInput + " " + splitDate; // + "This is where the result would go based on input1: " + input1 + " and input2: " + input2;
-    // place.innerHTML = validatedInput1 + " " + validatedInput2;
-    if(dateDiff != 1) {
+
+    if(dateDiff > 1) {
       place.innerHTML = "There are " + dateDiff + " days between " + makeDate(validatedInput1) + " and " + makeDate(validatedInput2);
     }
     else {
       place.innerHTML = "There is " + dateDiff + " day between " + makeDate(validatedInput1) + " and " + makeDate(validatedInput2);
-
     }
 }
 
 function verifyInputFormat(inputDateString) {
+  try {
     //check format of input MM/DD/(YY)YY
     dateForm = /^([0]|[1])?[0-9]\/[0-3]?[0-9]\/([1]|[2])?([9]|[0])?[0-9][0-9]$/;
-
     if(dateForm.test(inputDateString)) {
       //parse into separate vars
       return inputDateString.split("/");
     }
-    else return "Hmm... try again, using at least 1 digit for the month and day, and 2 or 4 for the year. EX: MM/DD/YY";
+
+    // check if empty
+    if(inputDateString == "" || inputDateString == null) {
+      throw "Please input some dates.";
+    }
+    else throw "Hmm... try again, using at least 1 digit for the month and day, and 2 or 4 for the year. EX: MM/DD/YY";
+  }
+  catch(err) {
+    document.getElementById("errors").innerHTML =  err;
+  }
 }
+
 function formatDateArray(splitDate) {
-  //get elements from date array
-  month = splitDate[0];
-  day = splitDate[1];
-  year = splitDate[2];
+  try {
+    //get elements from date array
+    month = splitDate[0];
+    day = splitDate[1];
+    year = splitDate[2];
 
-  //format the year
-  year = processYear(year);
-  day = processDay(day);
+    //format the year
+    year = processYear(year);
+    day = processDay(day);
 
-  // check if month and days in range
-  if((month <= 12 && month >= 1)){
-    if (day >= 1 && day <= getMonthLength(month, year)) {
-        return [month, day, year];
+    // check if month and days in range
+    if((month <= 12 && month >= 1)){
+      if (day >= 1 && day <= getMonthLength(month, year)) {
+          return [month, day, year];
+      }
+      else {
+        throw "Oops! There are " + getMonthLength(month) + " days in " +
+          getMonthName(month) + " in " + year + ", you should choose one of those.";
+
+      }
     }
     else {
-      return "Oops! There are " + getMonthLength(month) + " days in " +
-      getMonthName(month) + " in " + year + ", you should choose one of those.";
+      throw "Oye, there are 12 months in the Gregorian calendar. Perhaps " +
+      "pick on of those, or a different calendar :/ ";
     }
   }
-  else {
-    return "Oye, there are 12 months in the Gregorian calendar. Perhaps " +
-    "pick on of those, or a different calendar :/ ";
+  catch(err) {
+    document.getElementById("errors").innerHTML =  err;
   }
 }
 
