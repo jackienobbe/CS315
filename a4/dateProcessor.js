@@ -8,12 +8,10 @@ function processDates() {
     splitDate = parseDateInput(input1);
 
     validatedInput = validateInput(splitDate);
-    monthLength = getMonthLength(validatedInput);
 
     place = document.getElementById("result");
     // place.innerHTML = validatedInput + " " + splitDate; // + "This is where the result would go based on input1: " + input1 + " and input2: " + input2;
-    place.innerHTML = monthLength + " " + validatedInput;
-
+    place.innerHTML = validatedInput;
 }
 
 function parseDateInput(inputDateString) {
@@ -24,36 +22,45 @@ function parseDateInput(inputDateString) {
       //parse into separate vars
       return inputDateString.split("/");
     }
-    else return false;
+    else return "Hmm... try again, using at least 1 digit for the month and day, and 2 or 4 for the year. EX: MM/DD/YY";
 }
 
 function validateInput(splitDate) {
+  //get elements from date array
   month = splitDate[0];
   day = splitDate[1];
   year = splitDate[2];
 
-  // return splitDate;
-  // monthRegEx = /^[0-9]$/;
-  // return month;
-  if((month <= 12 && month >= 1) ){
-    if (day >= 1 && day <= getMonthLength(month)) {
-      if()
-      return month + " " day + " ," + year;
+  //format the year
+  year = processYear(year);
+  day = processDay(day);
+
+  // check if month and days in range
+  if((month <= 12 && month >= 1)){
+    if (day >= 1 && day <= getMonthLength(month, year)) {
+        return makeDate(month, day, year);
     }
-    else return "Oops! There are only " + getMonthLength(month) + " days in " + getMonthName(month);
+    else {
+      return "Oops! There are " + getMonthLength(month) + " days in " +
+      getMonthName(month) + " in " + year + ", you should choose one of those.";
+    }
   }
-  else return "Oye, there are only 12 months in the Gregorian calendar. Perhaps try a different month or a different calendar :/ "
-  // else return false;
-  // getMonth(month);
+  else {
+    return "Oye, there are 12 months in the Gregorian calendar. Perhaps " +
+    "pick on of those, or a different calendar :/ ";
+  }
 }
 
 //calcuate and return number of days in month
-function getMonthLength(month) {
-  if ( month == 2 )
+function getMonthLength(month, year) {
+  if (month == 2)
   {
+    if (year % 4 == 0) {
+      return monthLength = 29;
+    }
     return monthLength = 28;
   }
-  if ( (month <= 7 && month % 2 != 0 ) || ( month >= 8 && month % 2 == 0 ))
+  if ((month <= 7 && month % 2 != 0 ) || (month >= 8 && month % 2 == 0))
   {
     return monthLength = 31;
   }
@@ -100,7 +107,35 @@ function getMonthName(month) {
     }
 }
 
-function calculateDate(){}
+// formats the day to 1 digit, if applicable
+function processDay(day) {
+  dayFormat = /^0\d/;
+  if(dayFormat.test(day)) {
+    day = day.charAt(1);
+    return day;
+  }
+  else return day;
+}
+
+// checks if year in range, and translates to 4 digit format
+function processYear(year){
+    if(year < 100 && (year >= 0 && year <= 49)) {
+      return "20" + year;
+    }
+    if(year < 100 && (year >= 50 && year <= 99)) {
+      return "19" + year;
+    }
+    if(year < 1950 || year > 2049) {
+      return "Enter a year between 1950 and 2049, please.";
+    }
+    else {
+      return year;
+    }
+}
+
+function makeDate(month, day, year) {
+  return getMonthName(month) + " " + day + ", " + year;
+}
 
 window.onload = function() {
     thebutton = document.getElementById("process");
