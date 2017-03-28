@@ -5,11 +5,11 @@ function processDates() {
     input2 = document.getElementById("date2").value;
 
     //process input 1
-    splitDate = verifyInputFormat(input1);
-    validatedInput1 = formatDateArray(splitDate);
+    date1 = verifyInputFormat(input1);
+    validatedInput1 = formatDateArray(date1);
 
-    splitDate = verifyInputFormat(input2);
-    validatedInput2 = formatDateArray(splitDate);
+    date2 = verifyInputFormat(input2);
+    validatedInput2 = formatDateArray(date2);
 
     dateDiff = calcDateDistance(validatedInput1, validatedInput2);
 
@@ -43,12 +43,12 @@ function verifyInputFormat(inputDateString) {
   }
 }
 
-function formatDateArray(splitDate) {
+function formatDateArray(date) {
   try {
     //get elements from date array
-    month = splitDate[0];
-    day = splitDate[1];
-    year = splitDate[2];
+    month = date[0];
+    day = date[1];
+    year = date[2];
 
     //format the year
     year = processYear(year);
@@ -143,21 +143,25 @@ function processDay(day) {
 
 // checks if year in range, and translates to 4 digit format
 function processYear(year){
-    if(year < 100 && (year >= 0 && year <= 49)) {
-      return "20" + year;
+    try {
+      if(year < 100 && (year >= 0 && year <= 49)) {
+        return "20" + year;
+      }
+      if(year < 100 && (year >= 50 && year <= 99)) {
+        return "19" + year;
+      }
+      if(year < 1950 || year > 2049) {
+        throw "Enter a year between 1950 and 2049, please.";
+      }
+      else {
+        return year;
+      }
     }
-    if(year < 100 && (year >= 50 && year <= 99)) {
-      return "19" + year;
-    }
-    if(year < 1950 || year > 2049) {
-      return "Enter a year between 1950 and 2049, please.";
-    }
-    else {
-      return year;
+    catch(err) {
+      document.getElementById("errors").innerHTML =  err;
     }
 }
-function makeDate(date) {
-
+function makeDate(date) {}
   return getMonthName(date[0]) + " " + date[1] + ", " + date[2];
 }
 
@@ -171,6 +175,7 @@ function getDaysSince1950(date) {
   daysInYearToDate = 0;
   daysSinceJan1 = 0;
 
+  // sum days of wholes years (excludes the partial year)
   for(var j = year - 1 ; j >= baseYear; j--) {
     for(var i = 12; i > 0; i--) {
       daysInYearToDate = daysInYearToDate + getMonthLength(i, year);
@@ -178,10 +183,12 @@ function getDaysSince1950(date) {
     daysSinceBaseDate += daysInYearToDate;
     daysInYearToDate = 0;
   }
+  // sum days in partial year
   for(var k = month - 1; k > 0; k--) {
     daysSinceJan1 += getMonthLength(k, year);
   }
 
+  // add all together
   return daysSinceBaseDate = daysSinceBaseDate + daysSinceJan1 + day;
 }
 
