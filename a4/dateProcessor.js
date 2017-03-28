@@ -5,16 +5,31 @@ function processDates() {
     input2 = document.getElementById("date2").value;
 
     //process input 1
-    splitDate = parseDateInput(input1);
+    splitDate = verifyInputFormat(input1);
+    validatedInput1 = formatDateArray(splitDate);
 
-    validatedInput = validateInput(splitDate);
+    splitDate = verifyInputFormat(input2);
+    validatedInput2 = formatDateArray(splitDate);
+
+    // date2 = [1,1,1950];
+    // date1 = [9,3,2001];
+    // dateDiff = calcDateDistance(date1, date2);
+
+    dateDiff = calcDateDistance(validatedInput1, validatedInput2);
 
     place = document.getElementById("result");
     // place.innerHTML = validatedInput + " " + splitDate; // + "This is where the result would go based on input1: " + input1 + " and input2: " + input2;
-    place.innerHTML = validatedInput;
+    // place.innerHTML = validatedInput1 + " " + validatedInput2;
+    if(dateDiff != 1) {
+      place.innerHTML = "There are " + dateDiff + " days between " + makeDate(validatedInput1) + " and " + makeDate(validatedInput2);
+    }
+    else {
+      place.innerHTML = "There is " + dateDiff + " day between " + makeDate(validatedInput1) + " and " + makeDate(validatedInput2);
+
+    }
 }
 
-function parseDateInput(inputDateString) {
+function verifyInputFormat(inputDateString) {
     //check format of input MM/DD/(YY)YY
     dateForm = /^([0]|[1])?[0-9]\/[0-3]?[0-9]\/([1]|[2])?([9]|[0])?[0-9][0-9]$/;
 
@@ -24,8 +39,7 @@ function parseDateInput(inputDateString) {
     }
     else return "Hmm... try again, using at least 1 digit for the month and day, and 2 or 4 for the year. EX: MM/DD/YY";
 }
-
-function validateInput(splitDate) {
+function formatDateArray(splitDate) {
   //get elements from date array
   month = splitDate[0];
   day = splitDate[1];
@@ -38,7 +52,7 @@ function validateInput(splitDate) {
   // check if month and days in range
   if((month <= 12 && month >= 1)){
     if (day >= 1 && day <= getMonthLength(month, year)) {
-        return makeDate(month, day, year);
+        return [month, day, year];
     }
     else {
       return "Oops! There are " + getMonthLength(month) + " days in " +
@@ -132,9 +146,38 @@ function processYear(year){
       return year;
     }
 }
+function makeDate(date) {
 
-function makeDate(month, day, year) {
-  return getMonthName(month) + " " + day + ", " + year;
+  return getMonthName(date[0]) + " " + date[1] + ", " + date[2];
+}
+
+function getDaysSince1950(date) {
+  month = date[0];
+  day = date[1];
+  year = date[2];
+
+  baseYear = 1950;
+  daysSinceBaseDate = 0;
+  daysInYearToDate = 0;
+  daysSinceJan1 = 0;
+
+  for(var j = year - 1 ; j >= baseYear; j--) {
+    for(var i = 12; i > 0; i--) {
+      daysInYearToDate = daysInYearToDate + getMonthLength(i, year);
+    }
+    daysSinceBaseDate += daysInYearToDate;
+    daysInYearToDate = 0;
+  }
+  for(var k = month - 1; k > 0; k--) {
+    daysSinceJan1 += getMonthLength(k, year);
+  }
+
+  return daysSinceBaseDate = daysSinceBaseDate + daysSinceJan1 + day;
+}
+
+function calcDateDistance(date1, date2) {
+  dateDiff = getDaysSince1950(date1) - getDaysSince1950(date2);
+  return Math.abs(dateDiff);
 }
 
 window.onload = function() {
