@@ -1,54 +1,58 @@
 function processDates() {
-
     //get inputs from form
     input1 = document.getElementById("date1").value;
     input2 = document.getElementById("date2").value;
 
     //process input 1
-    date1 = verifyInputFormat(input1);
-    validatedInput1 = formatDateArray(date1);
+    var date1 = verifyInputFormat(input1);
+    var validatedInput1 = formatDateArray(date1);
 
-    date2 = verifyInputFormat(input2);
-    validatedInput2 = formatDateArray(date2);
+    var date2 = verifyInputFormat(input2);
+    var validatedInput2 = formatDateArray(date2);
 
-    dateDiff = calcDateDistance(validatedInput1, validatedInput2);
+    var isErrorsEmpty = document.getElementById('errors').innerHTML === "";
+    if(isErrorsEmpty){
+      dateDiff = calcDateDistance(validatedInput1, validatedInput2);
 
-    place = document.getElementById("result");
-
-    if(dateDiff > 1) {
-      place.innerHTML = "There are " + dateDiff + " days between " + makeDate(validatedInput1) + " and " + makeDate(validatedInput2);
-    }
-    else {
-      place.innerHTML = "There is " + dateDiff + " day between " + makeDate(validatedInput1) + " and " + makeDate(validatedInput2);
+      place = document.getElementById("result");
+      if(dateDiff > 1) {
+        place.innerHTML = "<p>There are " + dateDiff + " days between " + makeDate(validatedInput1) + " and " + makeDate(validatedInput2) + "</p>";
+      }
+      else {
+        place.innerHTML = "<p>There is " + dateDiff + " day between " + makeDate(validatedInput1) + " and " + makeDate(validatedInput2) + "</p>";
+      }
     }
 }
 
 function verifyInputFormat(inputDateString) {
   try {
-    //check format of input MM/DD/(YY)YY
-    dateForm = /^([0]|[1])?[0-9]\/[0-3]?[0-9]\/([1]|[2])?([9]|[0])?[0-9][0-9]$/;
-    if(dateForm.test(inputDateString)) {
-      //parse into separate vars
-      return inputDateString.split("/");
-    }
-
-    // check if empty
-    if(inputDateString == "" || inputDateString == null) {
-      throw "Please input some dates.";
-    }
-    else throw "Hmm... try again, using at least 1 digit for the month and day, and 2 or 4 for the year. EX: MM/DD/YY";
+      //check format of input MM/DD/(YY)YY
+      var dateForm = /^([0]|[1])?[0-9]\/[0-3]?[0-9]\/([1]|[2])?([9]|[0])?[0-9][0-9]$/;
+      // check if empty
+      if(inputDateString == "" || inputDateString == null) {
+        throw "Please input some dates.";
+      }
+      if(dateForm.test(inputDateString)) {
+        //parse into separate vars
+        return inputDateString.split("/");
+      }
+      else throw "Hmm... try again, using at least 1 digit for the month and day, and 2 or 4 for the year. EX: MM/DD/YY";
   }
   catch(err) {
-    document.getElementById("errors").innerHTML =  err;
+    document.getElementById("errors").innerHTML = err;
   }
 }
 
 function formatDateArray(date) {
   try {
+    if(date == [] || date == undefined)
+    {
+      throw "Please enter some dates.";
+    }
     //get elements from date array
-    month = date[0];
-    day = date[1];
-    year = date[2];
+    var month = date[0];
+    var day = date[1];
+    var year = date[2];
 
     //format the year
     year = processYear(year);
@@ -57,12 +61,12 @@ function formatDateArray(date) {
     // check if month and days in range
     if((month <= 12 && month >= 1)){
       if (day >= 1 && day <= getMonthLength(month, year)) {
-          return [month, day, year];
+          dateArray = [month, day, year];
+          return dateArray;
       }
       else {
         throw "Oops! There are " + getMonthLength(month) + " days in " +
           getMonthName(month) + " in " + year + ", you should choose one of those.";
-
       }
     }
     else {
@@ -162,34 +166,51 @@ function processYear(year){
     }
 }
 function makeDate(date) {
-  return getMonthName(date[0]) + " " + date[1] + ", " + date[2];
+  try{
+    if(date == undefined){
+      throw "Enter some dates.";
+    }
+    return getMonthName(date[0]) + " " + date[1] + ", " + date[2];
+  }
+  catch(err) {
+    document.getElementById("errors").innerHTML =  err;
+  }
 }
 
-function getDaysSince1950(date) {
-  month = date[0];
-  day = date[1];
-  year = date[2];
-
-  baseYear = 1950;
-  daysSinceBaseDate = 0;
-  daysInYearToDate = 0;
-  daysSinceJan1 = 0;
-
-  // sum days of wholes years (excludes the partial year)
-  for(var j = year - 1 ; j >= baseYear; j--) {
-    for(var i = 12; i > 0; i--) {
-      daysInYearToDate = daysInYearToDate + getMonthLength(i, year);
+function getDaysSince1950(dateArray) {
+  try {
+    if(date == [] || date == undefined)
+    {
+      throw "Please enter some dates.";
     }
-    daysSinceBaseDate += daysInYearToDate;
-    daysInYearToDate = 0;
-  }
-  // sum days in partial year
-  for(var k = month - 1; k > 0; k--) {
-    daysSinceJan1 += getMonthLength(k, year);
-  }
+    var month = dateArray[0];
+    var day = dateArray[1];
+    var year = dateArray[2];
 
-  // add all together
-  return daysSinceBaseDate = daysSinceBaseDate + daysSinceJan1 + day;
+    var baseYear = 1950;
+    var daysSinceBaseDate = 0;
+    var daysInYearToDate = 0;
+    var daysSinceJan1 = 0;
+
+    // sum days of wholes years (excludes the partial year)
+    for(var j = year - 1 ; j >= baseYear; j--) {
+      for(var i = 12; i > 0; i--) {
+        daysInYearToDate = daysInYearToDate + getMonthLength(i, year);
+      }
+      daysSinceBaseDate += daysInYearToDate;
+      daysInYearToDate = 0;
+    }
+    // sum days in partial year
+    for(var k = month - 1; k > 0; k--) {
+      daysSinceJan1 += getMonthLength(k, year);
+    }
+
+    // add all together
+    return daysSinceBaseDate = daysSinceBaseDate + daysSinceJan1 + day;
+  }
+  catch(err) {
+    document.getElementById("errors").innerHTML =  err;
+  }
 }
 
 function calcDateDistance(date1, date2) {
