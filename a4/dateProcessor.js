@@ -1,25 +1,26 @@
 function processDates() {
+    document.getElementById('result').innerHTML = "";
+    document.getElementById('errors').innerHTML = "";
+
     //get inputs from form
     input1 = document.getElementById("date1").value;
     input2 = document.getElementById("date2").value;
 
     //process input 1
     var date1 = verifyInputFormat(input1);
-    var validatedInput1 = formatDateArray(date1);
-
     var date2 = verifyInputFormat(input2);
-    var validatedInput2 = formatDateArray(date2);
 
     var isErrorsEmpty = document.getElementById('errors').innerHTML === "";
     if(isErrorsEmpty){
-      dateDiff = calcDateDistance(validatedInput1, validatedInput2);
+      var dateDiff = calcDateDistance(date1, date2);
 
       place = document.getElementById("result");
-      if(dateDiff > 1) {
-        place.innerHTML = "<p>There are " + dateDiff + " days between " + makeDate(validatedInput1) + " and " + makeDate(validatedInput2) + "</p>";
+
+      if(dateDiff != null && (dateDiff > 1 || dateDiff == 0) ) {
+        place.innerHTML += "<p>There are " + dateDiff + " days between " + makeDate(date1) + " and " + makeDate(date2) + "</p>";
       }
       else {
-        place.innerHTML = "<p>There is " + dateDiff + " day between " + makeDate(validatedInput1) + " and " + makeDate(validatedInput2) + "</p>";
+        place.innerHTML += "<p>There is " + dateDiff + " day between " + makeDate(date1) + " and " + makeDate(date2) + "</p>";
       }
     }
 }
@@ -27,32 +28,32 @@ function processDates() {
 function verifyInputFormat(inputDateString) {
   try {
       //check format of input MM/DD/(YY)YY
-      var dateForm = /^([0]|[1])?[0-9]\/[0-3]?[0-9]\/([1]|[2])?([9]|[0])?[0-9][0-9]$/;
+      var dateForm = /^\d?\d\/\d?\d\/(\d\d)?\d\d$/;
+
       // check if empty
       if(inputDateString == "" || inputDateString == null) {
         throw "Please input some dates.";
       }
       if(dateForm.test(inputDateString)) {
         //parse into separate vars
-        return inputDateString.split("/");
+        dateArray = inputDateString.split("/");
       }
-      else throw "Hmm... try again, using at least 1 digit for the month and day, and 2 or 4 for the year. EX: MM/DD/YY";
+      else {
+        throw "Hmm... one of your dates does not follow the acceptable formats.";
+      }
+      return formatDateArray(dateArray);
   }
   catch(err) {
-    document.getElementById("errors").innerHTML = err;
+    document.getElementById("errors").innerHTML += "<p> " + err + " </p>";
   }
 }
 
-function formatDateArray(date) {
+function formatDateArray(dateArray) {
   try {
-    if(date == [] || date == undefined)
-    {
-      throw "Please enter some dates.";
-    }
     //get elements from date array
-    var month = date[0];
-    var day = date[1];
-    var year = date[2];
+    var month = dateArray[0];
+    var day = dateArray[1];
+    var year = dateArray[2];
 
     //format the year
     year = processYear(year);
@@ -75,7 +76,7 @@ function formatDateArray(date) {
     }
   }
   catch(err) {
-    document.getElementById("errors").innerHTML =  err;
+    document.getElementById("errors").innerHTML += "<p> " + err + " </p>";
   }
 }
 
@@ -162,7 +163,7 @@ function processYear(year){
       }
     }
     catch(err) {
-      document.getElementById("errors").innerHTML =  err;
+      document.getElementById("errors").innerHTML += "<p> " + err + " </p>";
     }
 }
 function makeDate(date) {
@@ -173,16 +174,13 @@ function makeDate(date) {
     return getMonthName(date[0]) + " " + date[1] + ", " + date[2];
   }
   catch(err) {
-    document.getElementById("errors").innerHTML =  err;
+    document.getElementById("errors").innerHTML += "<p> " + err + " </p>";
   }
 }
 
 function getDaysSince1950(dateArray) {
   try {
-    if(date == [] || date == undefined)
-    {
-      throw "Please enter some dates.";
-    }
+
     var month = dateArray[0];
     var day = dateArray[1];
     var year = dateArray[2];
@@ -209,7 +207,7 @@ function getDaysSince1950(dateArray) {
     return daysSinceBaseDate = daysSinceBaseDate + daysSinceJan1 + day;
   }
   catch(err) {
-    document.getElementById("errors").innerHTML =  err;
+    document.getElementById("errors").innerHTML += "<p> calc days" + err + " </p>";
   }
 }
 
