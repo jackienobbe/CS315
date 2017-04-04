@@ -1,10 +1,10 @@
-<?php
+<!-- <?php
   ob_start();
   session_start();
-?>
+?> -->
 <body>
   <div id="wrapper">
-    
+
 <div id='header-wrapper'>
   <div id='header'>
     <a href='index.php'><img src='img/logo.jpg' alt='aquadome-logo' id='logo'>
