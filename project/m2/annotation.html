@@ -6,40 +6,37 @@
 
   <body>
     <h1>Milestone 2 Annotation</h1>
-    <h2>22 March 2017</h2>
-    <h3>Introdcutory Notes </h3>
+    <h2>Introductory Notes </h2>
        <ul>
+         <li>Due: 2 March 2017</li>
          <li>Last Modified: 4 April 2017</li>
+         <li>Milestone Link: <a href="http://ice.truman.edu/~jen1141/m2/index.php">Aqua-Archive</a></li>
        </ul>
-    <h3>Usage of PHP</h3>
+    <h2>Usage of PHP</h2>
     <ul>
-         <li>For this milestone, PHP was primarily implemented submit bands and shows. Because there is a heavy reliance on a database, the website now just takes the form data and displays it on the appropriate page as though it were pulling from a database.</li>
+         <li>For this milestone, PHP was primarily implemented submit bands and shows. Because there is a heavy reliance on a database, the website now just takes the form data and displays it on the appropriate page as though it were pulling from a database. The only way to see this page is to submit the form. Clicking on a link of a band will lead to a static, hardcoded page.</li>
             <ul>
-              <li><a href="newBand.php" >Adding a new band</a> forwards to <a href="viewBand.php">viewBand.php</a>, displaying the recent input.</li>
-              <li><a href="newShow.php" >Adding a new show</a> forwards to <a href="viewShow.php">viewShow.php</a>, displaying the recent input.</li>
+              <li>Adding a new band at <a href="newBand.php">newBand.php</a> forwards to <a href="viewBand.php">viewBand.php</a>, displaying the recent input.</li>
+              <li>Adding a new show at <a href="newShow.php" >newShow.php</a> forwards to <a href="viewShow.php">viewShow.php</a>, displaying the recent input.</li>
             </ul>
          <li>The start of a <a href="login.php">login</a> system is included, but does not affect much at this time. Simply takes username "aquadome" and password "password".
     </ul>
 
-   <h3>Source code for all pages in the project</h3>
+   <h2>Source code for all pages in the project</h2>
      <ul>
-       <li>Main page <a href="index.phps">index.phps</a></li>
-       <li>Log In <a href="login.phps">login.phps</a></li>
-       <li>List of shows in the database (static) <a href="dispShows.phps">dispShows.phps</a></li>
-       <li>List of bands in the database (static) <a href="dispBands.phps">dispBands.phps</a></li>
-       <li>New show form page <a href="newShow.phps">newShow.phps</a></li>
-       <li>Displays newShow form input <a href="viewShow.phps">viewShow.phps</a></li>
-       <li>New band form page <a href="newBand.phps">newBand.phps</a></li>
-       <li>Displays newBand form input <a href="viewBand.phps">viewBand.phps</a></li>
-
+       <li><a href="index.phps">index.phps</a> is the main landing page</li>
+       <li><a href="login.phps">login.phps</a> form for user to log in</li>
+       <li><a href="dispShows.phps">dispShows.phps</a> displays a list of shows in the database (static) </li>
+       <li><a href="dispBands.phps">dispBands.phps</a> displays a list of bands in the database (static) </li>
+       <li><a href="newShow.phps">newShow.phps</a> add new show form page </li>
+       <li><a href="viewShow.phps">viewShow.phps</a> displays newShow form input </li>
+       <li><a href="newBand.phps">newBand.phps</a> add new band form page </li>
+       <li><a href="viewBand.phps">viewBand.phps</a> displays newBand form input </li>
        <li>Included files for form processing (note: I am undecided if this is the best way of modularizing the displaying of pages and the processing of them, or if it may be better to have it all in one document. At this time, it seems that this separation allows for an easier use of the header() function in php, which cannot have any output come before it.
-
           <ul>
-            <li><a href="includes/header.phps">header.php</a></li>
+            <li><a href="includes/header.phps">header.phps</a></li>
             <li><a href="includes/login.inc.phps">login.inc.phps</a></li>
             <li><a href="includes/logout.inc.phps">logout.inc.phps</a></li>
-            <li><a href="includes/newBand.inc.phps">newBand.inc.phps</a></li>
-            <li><a href="includes/newShow.inc.phps">newBand.inc.phps</a></li>
           </ul>
        </li>
      </ul>
