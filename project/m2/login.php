@@ -7,9 +7,8 @@
 
   </head>
 
-  <body>
-
-    <div id="wrapper">
+  <!-- <body>
+    <div id="wrapper"> -->
       <?php include('includes/header.php'); ?>
       <div id="content">
         <form class="login" action="includes/login.inc.php" method="post">

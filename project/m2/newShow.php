@@ -5,9 +5,6 @@
     <meta charset="UTF-8">
   </head>
 
-  <body>
-
-    <div id="wrapper">
       <?php include('includes/header.php'); ?>
       <div id="content">
           <h2>Gotta New Show? </h2>
