@@ -14,5 +14,5 @@
 
   $addedBy = $_POST['currentUser'];
 
-  echo $bandName; 
+  // echo $bandName; 
 ?>
