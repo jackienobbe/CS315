@@ -1,10 +1,19 @@
-<?php
+<!DOCTYPE html>
+  <head>
 
-  function print_form(){
-    echo <<<END
+    <title>aqua-archive // add a show</title>
+    <link type="text/css" rel="stylesheet" href="css/aqua.css" />
+    <meta charset="UTF-8">
+
+  </head>
+
+  <body>
+
+    <div id="wrapper">
+      <?php include('includes/header.php'); ?>
       <div id="content">
           <h2>Gotta New Show? </h2>
-          <form class="new" action="$_SERVER[PHP_SELF]" method="post">
+          <form class="new">
             <div class="form-group"><label>Name</label><input type="text" name="showName" /></div>
             <div class="form-group"><label>Date</label><input type="text" name="showDate" /></div>
             <div class="form-group"><label>Location</label><input type="text" name="location" /></div>
@@ -15,7 +24,7 @@
 
             <div class="form-group">
               <label>Cohesiveness</label><br/>
-                the feel didn&#39;t flow
+                the feel didn't flow
                 <input type="range" min="1" max="5" value="3" step="1" />
                 it all just fit<br/>
             </div>
@@ -37,26 +46,8 @@
             <input type="submit" name="submit" value="Let's Go"/>
           </form>
       </div>
-END;
-  }
+    </div>
 
+  </body>
 
-  // RETRIEVE VARIABLES FROM FORM POST ACTION
-  $showName = $_POST['showName'];
-  $showDate = $_POST['showDate'];
-  $location = $_POST['location'];
-  $profit = $_POST['profit'];
-  $fbEvent = $_POST['fbevent'];
-  $potluck = $_POST['potluck'];
-  $planner = $_POST['planner'];
-  $cohesivness = $_POST['cohesivness'];
-  $advert = $_POST['advertisment'];
-  $wentWell = $_POST['wentWell'];
-  $wentBadly = $_POST['wentBadly'];
-
-  $addedBy = $_SESSION['currentUser'];
-
-
-
-
-?>
+</html>
