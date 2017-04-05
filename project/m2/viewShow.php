@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <head>
-
   <title>aqua-archive // shows</title>
   <link type="text/css" rel="stylesheet" href="css/aqua.css" />
   <meta charset="UTF-8">
-
 </head>
 
 <!-- <body>
@@ -14,9 +12,9 @@
       <h2 class="showName"><? echo $_POST['showName']; ?></h2>
       <h3>Show Details</h3>
       <ul class="details">
-          <li><label>Date </label> <? echo $_POST['showDate']; ?></li>
-          <li><label>FB Event Link </label><a href="<? echo $_POST['fbevent']; ?>" target="_blank"><? echo $_POST['fbevent']; ?></a></li>
-          <li><label>Door Price </label> $<? echo $_POST['doorPrice']; ?></li>
+          <li><label>Date </label> <?php echo $_POST['showDate']; ?></li>
+          <li><label>FB Event Link </label><a href="<? echo $_POST['fbevent']; ?>" target="_blank"><?php echo $_POST['fbevent']; ?></a></li>
+          <li><label>Door Price </label> $<?php echo $_POST['doorPrice']; ?></li>
           <li><label>Crowd size </label> <? echo $_POST['crowdSize']; ?></li>
           <li><label>Location </label> <? echo $_POST['location']; ?></li>
           <li><label>$ Made </label> $<? echo $_POST['profit']; ?></li>

@@ -26,7 +26,7 @@
       </ul>
     <h3>Past Shows</h3>
     <ul>
-      <li><a href="viewShow.php">The GIGANTIC Aquadome Show</a></li>
+      <li><a href="viewShowGigantic.php">The GIGANTIC Aquadome Show</a></li>
     </ul>
   </div>
 </div>

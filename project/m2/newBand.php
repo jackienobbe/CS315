@@ -18,7 +18,7 @@ else: ?>
       <?php include('includes/header.php'); ?>
        <div id="content">
             <h2>Gotta New Band? </h2>
-            <form class="new" action="includes/newBand.inc.php" method="post">
+            <form class="new" action="viewBand.php" method="post">
               <div class="form-group"><label>Name</label><input type="text" name="bandName" /></div>
               <div class="form-group"><label>Hometown</label><input type="text" name="homeTown" /></div>
               <div class="form-group"><label>Website/Facebook</label><input type="text" name="website" /></div>
