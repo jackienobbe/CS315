@@ -1,10 +1,8 @@
-<?php if(isset($_SESSION['currentUser'])):
-
+<!-- <?php if(!isset($_SESSION['currentUser'])):
     $here = "../newBand.php";
     $_POST['ref'] = $here;
     header("Location: login.php");
-
-else: ?>
+else: ?> -->
 
 <!DOCTYPE html>
   <head>
@@ -188,4 +186,4 @@ else: ?>
     </div>
   </body>
 </html>
-<?endif; ?>
+<!-- <?php endif; ?> -->
