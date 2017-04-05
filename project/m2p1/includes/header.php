@@ -19,7 +19,7 @@
   <div id='hello'>
     <?php if(isset($_SESSION['currentUser'])): ?>
       <ul>
-        <li> hey there, <? echo $_SESSION['currentUser']; ?></li>
+        <li> hey there, <?php echo $_SESSION['currentUser']; ?></li>
         <li>
           <form action='includes/logout.inc.php'>
             <button type='submit' name='logout'>logout</button>

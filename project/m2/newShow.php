@@ -39,7 +39,7 @@
               <label>What could have been better?</label><br/>
                 <textarea name="wentBadly"></textarea><br/>
             </div>
-            <input type="hidden" name="addedBy" value="<? echo $_POST['currentUser']; ?>" />
+            <input type="hidden" name="addedBy" value="<?php echo $_POST['currentUser']; ?>" />
             <input type="submit" name="submit" value="Let's Go"/>
           </form>
       </div>

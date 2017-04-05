@@ -1,4 +1,4 @@
-<? if(isset($_SESSION['currentUser'])):
+<?php if(isset($_SESSION['currentUser'])):
 
     $here = "../newBand.php";
     $_POST['ref'] = $here;
@@ -180,7 +180,7 @@ else: ?>
                     <option value="techno">techno</option>
                   </select><br/>
                 </div>
-              <!-- <input type="hidden" name="addedBy" value=<? echo $_POST['currentUser']; ?> /> -->
+              <!-- <input type="hidden" name="addedBy" value=<?php echo $_POST['currentUser']; ?> /> -->
               <input type="hidden" name="dateAdded"  value="Aug" />
               <input type="submit" name="submit" value="Let's Go"/>
             </form >
