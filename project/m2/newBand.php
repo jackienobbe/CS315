@@ -1,7 +1,7 @@
-<!-- <?php if(!isset($_SESSION['currentUser'])):
-    $here = "../newBand.php";
-    $_POST['ref'] = $here;
-    header("Location: login.php");
+<!-- <?php if(isset($_SESSION['currentUser'])):
+    // $here = "../newBand.php";
+    // $_POST['ref'] = $here;
+    // header("Location: login.php");
 else: ?> -->
 
 <!DOCTYPE html>
