@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <head>
 
@@ -26,6 +27,13 @@
           <li><label>What could have been better? </label> </li>
           <li><label>What went well? </label> </li>
       </ul>
+        <h3>Bands Involved</h3>
+        <ul>
+          <li><a href="viewBand.php">Gigantic</a></li>
+          <li>Radio Free Kirksville</li>
+          <li>American Basswood</li>
+          <li>Counting Black Sheep</li>
+        </ul>
       </div>
     </div>
 </body>
