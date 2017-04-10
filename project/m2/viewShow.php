@@ -26,14 +26,6 @@
           <li><label>What could have been better? </label> <?php echo $_POST['wentBadly']; ?></li>
           <li><label>Added by </label> <?php echo $_POST['addedBy']; ?></li>
       </ul>
-
-        <h3>Bands Involved</h3>
-        <ul>
-          <li><a href="viewBandGigantic.php">Gigantic</a></li>
-          <li>Radio Free Kirksville</li>
-          <li>American Basswood</li>
-          <li>Counting Black Sheep</li>
-        </ul>
       </div>
     </div>
 </body>
