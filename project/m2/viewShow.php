@@ -24,7 +24,7 @@
           <li><label>Well Advirtised? </label> <?php echo $_POST['advertisment']; ?>/5</li>
           <li><label>What went well? </label> <?php echo $_POST['wentWell']; ?></li>
           <li><label>What could have been better? </label> <?php echo $_POST['wentBadly']; ?></li>
-          <li><label>Added by </label> <?php echo $_POST['addedBy']; ?></li>
+          <!-- <li><label>Added by </label> <?php echo $_POST['addedBy']; ?></li> -->
       </ul>
       </div>
     </div>
