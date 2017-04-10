@@ -24,10 +24,6 @@
         <!-- <li><label>Last Visit </label> <?php echo $_POST['dateAdded']; ?></li> -->
         <!-- <li><label>Added By </label> <?php echo $_POST['addedBy']; ?></li> -->
       </ul>
-    <h3>Past Shows</h3>
-    <ul>
-      <li><a href="viewShowGigantic.php">The GIGANTIC Aquadome Show</a></li>
-    </ul>
   </div>
 </div>
 
