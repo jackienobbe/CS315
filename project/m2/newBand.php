@@ -45,7 +45,8 @@ else: ?> -->
 
               <div class="form-group">
                 <label>Genre (pick 3)</label><br/>
-                  <select>
+                  <select name="genre1">
+                    <option value=""></option>
                     <option value="acoustic">acoustic</option>
                     <option value="alternative">alternative</option>
                     <option value="ambient">ambient</option>
@@ -89,7 +90,8 @@ else: ?> -->
                     <option value="surf">surf</option>
                     <option value="techno">techno</option>
                   </select><br/>
-                  <select>
+                  <select name="genre2">
+                    <option value=""></option>
                     <option value="acoustic">acoustic</option>
                     <option value="alternative">alternative</option>
                     <option value="ambient">ambient</option>
@@ -133,7 +135,8 @@ else: ?> -->
                     <option value="surf">surf</option>
                     <option value="techno">techno</option>
                   </select><br/>
-                  <select>
+                  <select name="genre3">
+                    <option value=""></option>
                     <option value="acoustic">acoustic</option>
                     <option value="alternative">alternative</option>
                     <option value="ambient">ambient</option>
