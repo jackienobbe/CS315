@@ -2,6 +2,8 @@
   ob_start();
   session_start();
 ?>
+<body>
+  <div id="wrapper">
 
 <div id='header-wrapper'>
   <div id='header'>
@@ -26,10 +28,10 @@
           </form>
         </li>
       </ul>
-    <? else: ?>
+    <?php else: ?>
       <ul>
         <li><a href='login.php'>Login</a></li>
       </ul>
-    <? endif; ?>
+    <?php endif; ?>
   </div>
 </div>

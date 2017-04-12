@@ -7,13 +7,12 @@
 
   </head>
 
-  <body>
-
-    <div id="wrapper">
+  <!-- <body>
+    <div id="wrapper"> -->
       <?php include('includes/header.php'); ?>
       <div id="content">
         <form class="login" action="includes/login.inc.php" method="post">
-          <p><? if(isset($_POST['error']))
+          <p><?php if(isset($_POST['error']))
                 {
                   echo $_POST['error'];
                 }

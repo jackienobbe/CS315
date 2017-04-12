@@ -143,12 +143,12 @@ a h1 {
   margin: -20px 50px;
 }
 
-.new form {
+#new form {
   /*width: 60%;*/
   margin: 0px auto;
 }
 
-.new .form-group {
+#new .form-group {
   display: block;
   padding: 10px;
   margin: 0 0 -1px;
@@ -156,16 +156,20 @@ a h1 {
   position: relative;
   top: -1px;
 }
-.new label, .details label {
+#new label, .details label {
   font-weight: bold;
   margin-right: 10px;
 }
 
-.new input {
+#new input {
   clear: both;
 }
-.new textarea {
+#new textarea {
   height: 50px;
   width: 500px;
   margin-bottom: 10px;
+}
+
+.emptyFormField {
+  background-color: red;
 }

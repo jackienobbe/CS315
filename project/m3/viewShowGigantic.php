@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <head>
 
@@ -7,9 +8,8 @@
 
 </head>
 
-<body>
-
-  <div id="wrapper">
+<!-- <body>
+  <div id="wrapper"> -->
     <?php include('includes/header.php'); ?>
     <div id="content">
       <h2 class="showName">The GIGANTIC Aquadome Show</h2>

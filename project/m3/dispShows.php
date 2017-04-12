@@ -7,9 +7,8 @@
 
   </head>
 
-  <body>
-
-    <div id="wrapper">
+  <!-- <body>
+    <div id="wrapper"> -->
       <?php include('includes/header.php'); ?>
       <div id="content">
         <h2>Show Archive</h2>

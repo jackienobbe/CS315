@@ -1,54 +1,52 @@
-<? if(isset($_SESSION['currentUser'])):
-
-    $here = "../newBand.php";
-    $_POST['ref'] = $here;
-    header("Location: login.php");
-
-else: ?>
+<!-- <?php if(isset($_SESSION['currentUser'])):
+    // $here = "../newBand.php";
+    // $_POST['ref'] = $here;
+    // header("Location: login.php");
+else: ?> -->
 
 <!DOCTYPE html>
   <head>
-
     <title>aqua-archive // add a band</title>
     <link type="text/css" rel="stylesheet" href="css/aqua.css" />
     <meta charset="UTF-8">
-
   </head>
 
-  <body>
-    <div id="wrapper">
+  <!-- <body>
+    <div id="wrapper"> -->
       <?php include('includes/header.php'); ?>
        <div id="content">
             <h2>Gotta New Band? </h2>
-            <form class="new" action="php/newBand.php">
-              <div class="form-group"><label>Name</label><input type="text" name="bandName" /></div>
-              <div class="form-group"><label>Hometown</label><input type="text" name="homeTown" /></div>
-              <div class="form-group"><label>Website/Facebook</label><input type="text" name="website" /></div>
-              <div class="form-group"><label>Description</label><input type="text" name="description" /></div>
+            <form id="new" action="viewBand.php" method="post" onsubmit="return checkform(this)">
+              <div class="form-group"><label>Name <span class="required">*</span></label><input type="text" name="bandName" required /></div>
+              <div class="form-group"><label>Hometown <span class="required">*</span></label><input type="text" name="homeTown" required /></div>
+              <div class="form-group"><label>Website/Facebook <span class="required">*</span></label><input type="text" name="website" required /></div>
+              <div class="form-group"><label>Description <span class="required">*</span></label><input type="text" name="description" required /></div>
+              <div class="form-group"><label>Contact Person <span class="required">*</span></label><input type="text" name="contact" required /></div>
               <div class="form-group"><label># of Members</label><input type="text" name="numOfMembers" /></div>
 
               <div class="form-group">
-                <label>Professionalism</label><br/>
-                  pain in the ass
-                  <input type="range" min="1" max="5" value="3" step="1" />
+                <label>Professionalism <span class="required">*</span></label><br/>
+                  pain in the butt
+                  <input type="range" min="1" max="5" value="3" step="1" name="professionalism" required />
                   business in the front
               </div>
               <div class="form-group">
-                <label>Music Quality</label><br/>
+                <label>Music Quality <span class="required">*</span></label><br/>
                   painful 4 all parties
-                  <input type="range" min="1" max="5" value="3" step="1" />
+                  <input type="range" min="1" max="5" value="3" step="1" name="quality" required />
                   WOWMOM
               </div>
               <div class="form-group">
-                <label>Energy</label><br/>
+                <label>Energy <span class="required">*</span></label><br/>
                   we checked 4 a pulse but...
-                  <input type="range" min="1" max="5" value="3" step="1" />
+                  <input type="range" min="1" max="5" value="3" step="1" name="energy" required />
                   just stuck a fork in an outlet
               </div>
 
               <div class="form-group">
                 <label>Genre (pick 3)</label><br/>
-                  <select>
+                  <select name="genre1">
+                    <option value=""></option>
                     <option value="acoustic">acoustic</option>
                     <option value="alternative">alternative</option>
                     <option value="ambient">ambient</option>
@@ -92,7 +90,8 @@ else: ?>
                     <option value="surf">surf</option>
                     <option value="techno">techno</option>
                   </select><br/>
-                  <select>
+                  <select name="genre2">
+                    <option value=""></option>
                     <option value="acoustic">acoustic</option>
                     <option value="alternative">alternative</option>
                     <option value="ambient">ambient</option>
@@ -136,7 +135,8 @@ else: ?>
                     <option value="surf">surf</option>
                     <option value="techno">techno</option>
                   </select><br/>
-                  <select>
+                  <select name="genre3">
+                    <option value=""></option>
                     <option value="acoustic">acoustic</option>
                     <option value="alternative">alternative</option>
                     <option value="ambient">ambient</option>
@@ -181,10 +181,12 @@ else: ?>
                     <option value="techno">techno</option>
                   </select><br/>
                 </div>
-                <input type="submit" name="submit" value="Let's Go"/>
+              <!-- <input type="hidden" name="addedBy" value=<?php echo $_POST['currentUser']; ?> /> -->
+              <input type="hidden" name="dateAdded"  value="<?php Date() ?>" />
+              <input type="submit" name="submit" value="Let's Go"/>
             </form >
         </div>
     </div>
   </body>
 </html>
-<?endif; ?>
+<!-- <?php endif; ?> -->
