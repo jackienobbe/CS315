@@ -173,3 +173,30 @@ a h1 {
 .emptyFormField {
   background-color: red;
 }
+
+.row {
+  padding: 5px;
+  width: 85%;
+  border-bottom: 1px solid #B9C6CD;
+}
+
+.rowHover{
+  background-color: #f2f2f2;
+}
+.row h3{
+  font-size: 14pt;
+  line-height: normal;
+  display: inline;
+  width: 50%;
+}
+
+.rowDetails {
+  padding: 5px;
+  display: none;
+  list-style-type: none;
+}
+
+.rowDetails label {
+  font-weight: bold;
+  margin-right: 10px;
+}
