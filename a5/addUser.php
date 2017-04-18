@@ -13,7 +13,7 @@
                     <form id="newUser" method="post" action="$_SERVER[PHP_SELF]" >
                         <label>First Name:</label><input type="text" name="first_name" required /> <br/>
                         <label>Last Name:</label><input type="text" name="last_name" required /> <br/>
-                        <label>Email:</label><input type="email" email="email" required /> </br>
+                        <label>Email:</label><input type="email" name="email" required /> </br>
 
                         <input type="hidden" name="go" value="process">
                         <input type="submit" />
