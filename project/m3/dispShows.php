@@ -56,12 +56,57 @@
             </div>
             <div class="row" >
               <h3 class=""> Finals Fever Reliever 2k16!</h3>
+              <div class="rowDetails">
+                <li><label>Date </label> </li>
+                <li><label>Website/FB </label></li>
+                <li><label>Door Price </label></li>
+                <li><label>Crowd size </label></li>
+                <li><label>$ Made </label></li>
+                <li><label>Planned by </label></li>
+                <li><label>Coheseivness </label> -/5 </li>
+                <li><label>Well Advirtised? </label> -/5</li>
+                <li><label>What went well? </label> </li>
+                <li><label>What could have been better? </label> </li>
+
+                <button class="edit">Edit Show</button>
+                <button class="delete">Delete Show</button>
+              </div>
             </div>
             <div class="row" >
               <h3 class="">Chew Toy // Lesbian Poetry // Seen From Space</h3>
+              <div class="rowDetails">
+                <li><label>Date </label> </li>
+                <li><label>Website/FB </label></li>
+                <li><label>Door Price </label></li>
+                <li><label>Crowd size </label></li>
+                <li><label>$ Made </label></li>
+                <li><label>Planned by </label></li>
+                <li><label>Coheseivness </label> -/5 </li>
+                <li><label>Well Advirtised? </label> -/5</li>
+                <li><label>What went well? </label> </li>
+                <li><label>What could have been better? </label> </li>
+
+                <button class="edit">Edit Show</button>
+                <button class="delete">Delete Show</button>
+              </div>
             </div>
             <div class="row" >
               <h3 class="">Dome of the Dead!</h3>
+              <div class="rowDetails">
+                <li><label>Date </label> </li>
+                <li><label>Website/FB </label></li>
+                <li><label>Door Price </label></li>
+                <li><label>Crowd size </label></li>
+                <li><label>$ Made </label></li>
+                <li><label>Planned by </label></li>
+                <li><label>Coheseivness </label> -/5 </li>
+                <li><label>Well Advirtised? </label> -/5</li>
+                <li><label>What went well? </label> </li>
+                <li><label>What could have been better? </label> </li>
+
+                <button class="edit">Edit Show</button>
+                <button class="delete">Delete Show</button>
+              </div>
             </div>
           </div>
       </div>
