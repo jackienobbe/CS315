@@ -3,7 +3,7 @@
 
   <title>aqua-archive // bands</title>
   <script src="js/jquery-3.2.1.min.js"></script>
-  <script src="js/dispShows.js" type="text/javascript"></script>
+  <script src="js/dispRows.js" type="text/javascript"></script>
   <script src="js/search.js" type="text/javascript"></script>
   <link type="text/css" rel="stylesheet" href="css/aqua.css" />
   <meta charset="UTF-8">
