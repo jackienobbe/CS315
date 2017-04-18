@@ -15,6 +15,7 @@
       <div id="content">
         <h2>Show Archive</h2>
           <div class="dispContainer">
+            <input type="text" id="search" value="" placeholder="filter shows"/>
             <div class="row" >
               <h3 class="">The GIGANTIC Aquadome Show</h3>
                 <div class="rowDetails">

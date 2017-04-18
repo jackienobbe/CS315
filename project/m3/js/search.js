@@ -7,7 +7,6 @@ $(document).extend($.expr[':'], {
   }
 });
 
-
 $(document).ready(function(){
     $("#search").keyup(function(e) {
         var query = $("#search").val();

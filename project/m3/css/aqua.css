@@ -200,3 +200,8 @@ a h1 {
   font-weight: bold;
   margin-right: 10px;
 }
+
+#search {
+    float: right;
+    margin-right: 15%;
+}

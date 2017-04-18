@@ -16,7 +16,7 @@
     <div id="content">
       <h2>Bands</h2>
       <div class="dispContainer">
-        <input type="text" id="search" value=""/>
+        <input type="text" id="search" value="" placeholder="filter bands"/>
         <div class="row" ><h3>Gigantic Bass</h3>
             <div class="rowDetails">
               <li><label>Hometown </label> Springfield, MO</li>
