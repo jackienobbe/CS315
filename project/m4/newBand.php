@@ -110,7 +110,7 @@ END;
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // prepare sql and bind parameters
-            $stmt = $conn->prepare("INSERT INTO Band (bandName, homeTown, website, description, contact, email, professionalism, quality, energy)
+            $stmt = $conn->prepare("INSERT INTO band (bandName, homeTown, website, description, contact, email, professionalism, quality, energy)
             VALUES (:bandName, :homeTown, :website, :description, :contact, :email, :professionalism, :quality, :energy)");
             $stmt->bindParam(':bandName', $bandName);
             $stmt->bindParam(':homeTown', $homeTown);

@@ -50,10 +50,10 @@ END;
         $theme = $_POST['theme'];
         $moneyMade = $_POST['profit'];
         $doorPrice = $_POST['doorPrice'];
-        $potluck = $_POST['potluck'];
+        $potluck = true;
         $plannedBy = $_POST['plannedBy'];
         $cohesiveness = $_POST['cohesiveness'];
-        $advirtisement = $_POST['advirtisement'];
+        $advertisement = $_POST['advertisement'];
         $wentWell = $_POST['wentWell'];
         $wentBad = $_POST['wentBad'];
 
@@ -64,8 +64,8 @@ END;
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // prepare sql and bind parameters
-            $stmt = $conn->prepare("INSERT INTO Show (showName, showDate, fbLink, location, crowdSize, theme, moneyMade, doorPrice, potluck, plannedBy, cohesiveness, advertisement, wentWell, wentBad)
-            VALUES (:showName, :showDate, :fbLink, :location, :crowdSize, :theme, :moneyMade, :doorPrice, :potluck, :plannedBy, :cohesiveness, :advertisement, :wentWell, :wentBad)");
+            $stmt = $conn->prepare("INSERT INTO event (showDate, showName, fbLink, crowdSize, theme, location, moneyMade, doorPrice, potluck, plannedBy, cohesiveness, advertisement, wentWell, wentBad)
+            VALUES (:showDate, :showName, :fbLink, :crowdSize, :theme, :location, :moneyMade, :doorPrice, :potluck, :plannedBy, :cohesiveness, :advertisement, :wentWell, :wentBad)");
             $stmt->bindParam(':showName', $showName);
             $stmt->bindParam(':showDate', $showDate);
             $stmt->bindParam(':fbLink', $fbLink);
