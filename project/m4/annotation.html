@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  </head>
+
+  <body>
+    <h1>Milestone 3 Annotation</h1>
+    <h2>Introductory Notes </h2>
+       <ul>
+         <li>Due: 12 March 2017</li>
+         <li>Last Modified: 17 April 2017</li>
+         <li>Milestone Link: <a href="http://ice.truman.edu/~jen1141/m3/index.php">Aqua-Archive</a></li>
+       </ul>
+    <h2>Usage of JS</h2>
+    <ul>
+         <li>For this milestone, JS was primarily used to view the list of all bands and shows available. I did use jQuery for several features, as it more effectively accomplished the task that I was working on.</li>
+            <ul>
+              <li>Currently, a static list of bands and shows are displayed on their respective pages (<a href="dispBands.php">dispBands.php</a><a href="dispShows.php">dispShows.php</a>)</li>
+              <li>Each band or show name is clickable, and the details will appear for that specific band or show. There is also an early 'delete' function that just removes the band or show from the page when clicked, but eventually will remove the item from the database.
+              <li>In this milestone, a search/filter function was created to search through the items listed on the bands and shows page. (The glitch with this function is that in order to get items to show once they've disappeared is to erase the whole query.) </li>
+            </ul>
+    </ul>
+
+   <h2>Source code for all pages in the project</h2>
+     <ul>
+       <li><a href="index.phps">index.phps</a> is the main landing page</li>
+       <li><a href="login.phps">login.phps</a> form for user to log in</li>
+       <li><a href="dispShows.phps">dispShows.phps</a> displays a list of shows in the database (static) </li>
+       <li><a href="dispBands.phps">dispBands.phps</a> displays a list of bands in the database (static) </li>
+       <li><a href="newShow.phps">newShow.phps</a> add new show form page </li>
+       <li><a href="viewShow.phps">viewShow.phps</a> displays newShow form input </li>
+       <li><a href="newBand.phps">newBand.phps</a> add new band form page </li>
+       <li><a href="viewBand.phps">viewBand.phps</a> displays newBand form input </li>
+       <li>Included files for form processing (note: I am undecided if this is the best way of modularizing the displaying of pages and the processing of them, or if it may be better to have it all in one document. At this time, it seems that this separation allows for an easier use of the header() function in php, which cannot have any output come before it.
+          <ul>
+            <li><a href="includes/header.phps">header.phps</a></li>
+            <li><a href="includes/login.inc.phps">login.inc.phps</a></li>
+            <li><a href="includes/logout.inc.phps">logout.inc.phps</a></li>
+          </ul>
+       </li>
+       <li>JS Files
+           <ul>
+               <li><a href="dispRows.js">dispRows.js</a> Allows the item details to show and hide on click. </li>
+               <li><a href="search.js">search.js</a> Implements the filtering feature for the display bands and shows pages.</li>
+               <li><a href="jquery-3.2.1.min.js">JQuery source file</a>. </li>
+           </ul>
+       </li>
+     </ul>
+  </body>
+</html>
