@@ -9,7 +9,7 @@
 
         while ( $row = $stmt->Fetch(PDO::FETCH_ASSOC)) {
             print "
-                <div class='row' ><h3>{$row['bandName']}</h3>
+                <div class='row'><h3>{$row['bandName']}</h3>
                   <div class='rowDetails'>
                     <ul>
                         <li><label>Hometown </label> {$row['homeTown']}</li>
@@ -26,6 +26,38 @@
                   </div>
                 </div>";
         }
+    }
+
+    function deleteRow() {
+        $genre1 = $_POST['genre1'];
+
+        try {
+            $conn = new PDO("mysql:host=mysql.truman.edu;dbname=jen1141CS315", "jen1141", "aeveuthu");
+
+            // set the PDO error mode to exception
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            // prepare sql and bind parameters
+            $stmt = $conn->prepare("UPDATE band SET bandName = :bandName, homeTown, website, description, contact, email, professionalism, quality, energy)
+            VALUES (:bandName, :homeTown, :website, :description, :contact, :email, :professionalism, :quality, :energy)");
+            $stmt->bindParam(':bandName', $bandName);
+            $stmt->bindParam(':homeTown', $homeTown);
+            $stmt->bindParam(':website', $website);
+            $stmt->bindParam(':description', $description);
+            $stmt->bindParam(':contact', $contactPerson);
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':professionalism', $professionalism);
+            $stmt->bindParam(':quality', $quality);
+            $stmt->bindParam(':energy', $energy);
+
+            $stmt->execute();
+        }
+        catch(PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
+
+        // end the DB connection.
+        $conn = null;
     }
 ?>
 

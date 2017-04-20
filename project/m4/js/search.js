@@ -1,4 +1,4 @@
-// Allows for a case-insensitive :contains selector. Taken from http://stackoverflow.com/a/4936066
+// This function allows for a case-insensitive :contains selector. Taken from http://stackoverflow.com/a/4936066
 $(document).extend($.expr[':'], {
   'containsi': function(elem, i, match, array)
   {

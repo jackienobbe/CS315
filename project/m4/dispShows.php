@@ -3,7 +3,7 @@
 
         $conn = new PDO("mysql:host=mysql.truman.edu;dbname=jen1141CS315", "jen1141", "aeveuthu");
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $stmt = $conn->prepare("SELECT showDate, showName, fbLink, crowdSize, theme, location, moneyMade, doorPrice, plannedBy, cohesiveness, advertisement, wentWell, wentBad FROM event");
+        $stmt = $conn->prepare("SELECT showID, showDate, showName, fbLink, crowdSize, theme, location, moneyMade, doorPrice, plannedBy, cohesiveness, advertisement, wentWell, wentBad FROM event");
 
         $stmt->execute();
 
@@ -21,13 +21,15 @@
                       <li><label>Planned by </label> {$row['plannedBy']}</li>
                       <li><label>Location </label> {$row['location']}</li>
                       <li><label>Coheseivness </label> {$row['cohesiveness']}/5 </li>
-                      <li><label>Well Advirtised? </label> {$row['advertisement']}/5</li>
+                      <li><label>Well advirtised? </label> {$row['advertisement']}/5</li>
                       <li><label>What went well? </label> {$row['wentWell']}</li>
                       <li><label>What could have been better? </label> {$row['wentBad']}</li>
                     </ul>
-                      <button class='edit'>Edit Show</button>
-                      <button class='delete'>Delete Show</button>
-
+                    <form action='$_SERVER[PHP_SELF]' method='post'>
+                        <input type='hidden' value={$row['showID']} />
+                        <button class='edit'>Edit Show</button>
+                        <button class='delete'>Delete Show</button>
+                    </form>
                   </div>
                 </div>";
         }

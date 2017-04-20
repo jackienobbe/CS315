@@ -82,6 +82,8 @@ else: ?> -->
                 <option value="surf">surf</option>
                 <option value="techno">techno</option>
               </select><br/>
+              <div contenteditable="true" class="blocking" name="genres">
+              </div>
             </div>
           <input type="hidden" name="dateAdded"  value="<?php Date() ?>" />
           <input type="hidden" name="go" value="process">
@@ -139,6 +141,8 @@ END;
   <head>
     <title>aqua-archive // add a band</title>
     <link type="text/css" rel="stylesheet" href="css/aqua.css" />
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/wordBlocking.js" type="text/javascript"></script>
     <meta charset="UTF-8">
   </head>
 

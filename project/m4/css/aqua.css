@@ -205,3 +205,10 @@ a h1 {
     float: right;
     margin-right: 15%;
 }
+
+.word {
+    background-color: aqua;
+    margin: 3px;
+    border: 1px solid aqua;
+    border-radius: 2px;
+}

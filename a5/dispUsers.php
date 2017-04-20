@@ -20,16 +20,21 @@
 
          <p>Here is every user sorted by $sortby:</p>
 
-         <table border="1">
-            <th><a href="dispUsers.php?sortby=first_name">First Name</a></th>
-            <th><a href="dispUsers.php?sortby=last_name">Last Name</a></th>
-            <th><a href="dispUsers.php?sortby=email">Email</a></th>
+         <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th><a href="dispUsers.php?sortby=first_name">First Name</a></th>
+                    <th><a href="dispUsers.php?sortby=last_name">Last Name</a></th>
+                    <th><a href="dispUsers.php?sortby=email">Email</a></th>
+                </tr>
+            </thead>
+            <tbody>
 END;
 
         while ( $row = $stmt->Fetch(PDO::FETCH_ASSOC)) {
-            print "<tr><td>{$row['first_name']}</td><td>{$row['last_name']}</td><td>{$row['email']}</td><tr>";
+            print "<tr><td>{$row['first_name']}</td><td>{$row['last_name']}</td><td>{$row['email']}</td></tr>";
         }
-        print "</table>";
+        print "</tbody>\n</table>";
     }
 ?>
 
@@ -38,10 +43,13 @@ END;
     <head>
         <title>CS315 // Nobbe // a5</title>
         <meta charset="utf-8" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     </head>
     <body>
-        <h1>All of the users, ever</h1>
-        <?php dispUsers(); ?>
-        <p><a href="addUser.php">Add a user</a></p>
+        <div class="container">
+            <h1>All of the users, ever</h1>
+            <?php dispUsers(); ?>
+            <p><a href="addUser.php">Add a user >></a></p>
+        </div>
     </body>
 </html>
