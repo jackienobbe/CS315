@@ -1,7 +1,16 @@
 <?php
+    // TABLE DEFINITION
+    // CREATE TABLE  `jen1141CS315`.`a5_users` (
+    //  `first_name` TEXT CHARACTER SET ASCII NOT NULL ,
+    //  `last_name` TEXT CHARACTER SET ASCII NOT NULL ,
+    //  `email` TEXT CHARACTER SET ASCII NOT NULL ,
+    //  `user_id` INT( 11 ) NOT NULL AUTO_INCREMENT ,
+    // PRIMARY KEY ( `user_id` )
+    // ) ENGINE = INNODB DEFAULT CHARSET = utf8 COLLATE = utf8_bin AUTO_INCREMENT =10;
+
     function print_form() {
         echo <<<END
-            <h2 class="col-sm-offset-1"> Get On Our List!</h2>
+            <h2 class="col-sm-offset-1"> Get On <em>The List</em>~</h2>
             <form class="form" id="newUser" method="post" action="$_SERVER[PHP_SELF]" >
                 <div class="form-group">
                     <div class="col-sm-10">
