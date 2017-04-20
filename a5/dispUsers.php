@@ -45,7 +45,7 @@ END;
     </head>
     <body>
         <div class="container">
-            <h1><em>The List</em></h1>
+            <h1><em>The List</em</h1>
             <?php dispUsers(); ?>
             <p><a href="addUser.php">Add a user >></a></p>
         </div>
