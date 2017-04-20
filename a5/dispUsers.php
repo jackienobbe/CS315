@@ -30,7 +30,10 @@
 END;
 
         while ( $row = $stmt->Fetch(PDO::FETCH_ASSOC)) {
-            print "<tr><td>{$row['first_name']}</td><td>{$row['last_name']}</td><td>{$row['email']}</td></tr>";
+            $first_name = htmlspecialchars($row['first_name']);
+            $last_name = htmlspecialchars($row['last_name']);
+            $email = htmlspecialchars($row['email']);
+            print "<tr><td>$first_name</td><td>$last_name</td><td>$email</td></tr>";
         }
         print "</tbody>\n</table>";
     }
@@ -45,7 +48,7 @@ END;
     </head>
     <body>
         <div class="container">
-            <h1><em>The List</em</h1>
+            <h1><em>The List</em></h1>
             <?php dispUsers(); ?>
             <p><a href="addUser.php">Add a user >></a></p>
         </div>
