@@ -18,8 +18,6 @@
 
         echo <<<END
 
-         <p>Here is every user sorted by $sortby:</p>
-
          <table class="table table-striped">
             <thead>
                 <tr>

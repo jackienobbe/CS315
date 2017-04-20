@@ -54,9 +54,7 @@ END;
         // end the DB connection.
         $conn = null;
 
-        echo "<p>Success!!!</p>";
-        echo "<p>To see all names and emails, go <a href='dispUsers.php'>here</a></p>";
-
+        echo "<h2 class='col-md-4 col-md-offset-2'>Success!!!</h2>";
     }
 ?>
 
