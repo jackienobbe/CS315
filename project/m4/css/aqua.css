@@ -209,6 +209,18 @@ a h1 {
 .word {
     background-color: aqua;
     margin: 3px;
+    padding: 2px;
     border: 1px solid aqua;
     border-radius: 2px;
+
+    float: left;
+    display: inline-block;
+}
+
+.insertedBlocks {
+    width: 100px;
+    display: inline;
+}
+.blockingInput {
+    display: inline-block;
 }

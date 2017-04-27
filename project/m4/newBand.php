@@ -82,7 +82,13 @@ else: ?> -->
                 <option value="surf">surf</option>
                 <option value="techno">techno</option>
               </select><br/>
-              <div contenteditable="true" class="blocking" name="genres">
+              <div class="blocking" name="genres" placeholder="genres">
+                <div class="insertedBlocks">
+                    <div class="blockingInput" contenteditable="true">
+                    
+                    </div>
+                </div>
+
               </div>
             </div>
           <input type="hidden" name="dateAdded"  value="<?php Date() ?>" />

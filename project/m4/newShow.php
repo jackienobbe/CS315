@@ -1,4 +1,18 @@
 <?php
+    function populate_bands_available() {
+        $conn = new PDO("mysql:host=mysql.truman.edu;dbname=jen1141CS315", "jen1141", "aeveuthu");
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $stmt = $conn->prepare("SELECT bandID, bandName FROM band");
+
+        $stmt->execute();
+
+        print "<select name='band'>\n";
+        while ( $row = $stmt->Fetch(PDO::FETCH_ASSOC)) {
+            print "
+                <option value='{$row['bandID']}'>{$row['bandName']}</option>\n";
+        }
+        print "</select>\n";
+    }
     function print_form() {
     echo <<<END
         <h2>Gotta New Show? </h2>
@@ -33,6 +47,12 @@
           <div class="form-group">
             <label>What could have been better? <span class="required">*</span></label><br/>
               <textarea name="wentBadly" id="wentBadly" class="" required ></textarea><br/>
+          </div>
+          <div class="form-group">
+            <label>Who played at the show? </label>
+END;
+            populate_bands_available();
+echo <<<END
           </div>
           <input type="hidden" name="go" value="process">
           <input type="submit" name="submit" value="Let's Go"/>
@@ -82,6 +102,13 @@ END;
             $stmt->bindParam(':wentBad', $wentBad);
 
             $stmt->execute();
+
+            $stmt = $conn->prepare("INSERT INTO showToBand (showID, bandID) VALUES (:showID, :bandID)");
+            $stmt->bindParam(':showID', $showID);
+            $stmt->bindParam(':bandID', $bandID);
+
+            $stmt->execute(); 
+
         }
         catch(PDOException $e) {
             echo "Error: " . $e->getMessage();
