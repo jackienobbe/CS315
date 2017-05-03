@@ -1,0 +1,15 @@
+<?xml version = "1.0" ?>
+<!DOCTYPE CATALOG SYSTEM "catalog.dtd">
+
+<CATALOG>
+    <BOOK>
+        <TITLE></TITLE>
+        <AUTHOR first_name="" last_name=""></AUTHOR>
+        <PUBLISHER>
+            <NAME></NAME>
+            <ISBN></ISBN>
+        </PUBLISHER>
+        <PUB_DATE month="" year=""></PUB_DATE>
+        <LoC_NUM></LoC_NUM>
+    </BOOK>
+</CATALOG>

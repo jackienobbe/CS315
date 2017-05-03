@@ -53,7 +53,9 @@
 END;
             populate_bands_available();
 echo <<<END
+
           </div>
+          <span class="addAnother">+ another band</span>
           <input type="hidden" name="go" value="process">
           <input type="submit" name="submit" value="Let's Go"/>
         </form>
@@ -76,6 +78,7 @@ END;
         $advertisement = $_POST['advertisement'];
         $wentWell = $_POST['wentWell'];
         $wentBad = $_POST['wentBad'];
+        $bandID = $_POST['band'];
 
         try {
             $conn = new PDO("mysql:host=mysql.truman.edu;dbname=jen1141CS315", "jen1141", "aeveuthu");
@@ -85,7 +88,8 @@ END;
 
             // prepare sql and bind parameters
             $stmt = $conn->prepare("INSERT INTO event (showDate, showName, fbLink, crowdSize, theme, location, moneyMade, doorPrice, potluck, plannedBy, cohesiveness, advertisement, wentWell, wentBad)
-            VALUES (:showDate, :showName, :fbLink, :crowdSize, :theme, :location, :moneyMade, :doorPrice, :potluck, :plannedBy, :cohesiveness, :advertisement, :wentWell, :wentBad)");
+            VALUES (:showDate, :showName, :fbLink, :crowdSize, :theme, :location, :moneyMade, :doorPrice, :potluck, :plannedBy, :cohesiveness, :advertisement, :wentWell, :wentBad);
+            INSERT INTO show_band (showID, bandID) VALUES (LAST_INSERT_ID(), :bandID)");
             $stmt->bindParam(':showName', $showName);
             $stmt->bindParam(':showDate', $showDate);
             $stmt->bindParam(':fbLink', $fbLink);
@@ -101,13 +105,9 @@ END;
             $stmt->bindParam(':wentWell', $wentWell);
             $stmt->bindParam(':wentBad', $wentBad);
 
-            $stmt->execute();
-
-            $stmt = $conn->prepare("INSERT INTO showToBand (showID, bandID) VALUES (:showID, :bandID)");
-            $stmt->bindParam(':showID', $showID);
             $stmt->bindParam(':bandID', $bandID);
 
-            $stmt->execute(); 
+            $stmt->execute();
 
         }
         catch(PDOException $e) {
@@ -124,7 +124,9 @@ END;
 <!DOCTYPE html>
   <head>
     <title>aqua-archive // add a show</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/newShow.js" type="text/javascript"></script>
+
     <link type="text/css" rel="stylesheet" href="css/aqua.css" />
     <meta charset="UTF-8">
   </head>
