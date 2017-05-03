@@ -2,12 +2,12 @@
     <!ELEMENT BOOK (TITLE, AUTHOR+, PUBLISHER*, PUB_DATE, LoC_NUM)>
     <!ELEMENT TITLE (#PCDATA)>
     <!ELEMENT AUTHOR EMPTY>
-        <!ATTLIST AUTHOR first_name CDATA >
+        <!ATTLIST AUTHOR first_name CDATA #IMPLIED>
         <!ATTLIST AUTHOR last_name CDATA #REQUIRED>
     <!ELEMENT PUBLISHER (NAME,ISBN)>
     <!ELEMENT NAME (#PCDATA)>
     <!ELEMENT ISBN (#PCDATA)>
     <!ELEMENT PUB_DATE EMPTY>
-        <!ATTLIST PUB_DATE month ( Jan | Feb | Mar | Apr | May | Jun | Jul | Aug | Sept | Oct | Nov | Dec ) >
+        <!ATTLIST PUB_DATE month ( Jan | Feb | Mar | Apr | May | Jun | Jul | Aug | Sept | Oct | Nov | Dec ) #IMPLIED>
         <!ATTLIST PUB_DATE year CDATA #REQUIRED>
     <!ELEMENT LoC_NUM (#PCDATA)>
