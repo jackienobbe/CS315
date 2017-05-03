@@ -1,4 +1,5 @@
 <?xml version = "1.0"?>
+<?xml-stylesheet type="text/css" href="catalog.css"?>
 <!DOCTYPE CATALOG SYSTEM "http://ice.truman.edu/~jen1141/a6/catalog.dtd">
 
 <CATALOG>
@@ -19,7 +20,7 @@
         </AUTHOR>
         <PUBLISHER>
             <NAME>Harper</NAME>
-            <ISBN></ISBN>
+            <ISBN>9780061074288</ISBN>
         </PUBLISHER>
         <PUB_DATE>
             <MONTH>September</MONTH>
@@ -27,17 +28,20 @@
         </PUB_DATE>
         <LoC_NUM>98168838</LoC_NUM>
     </BOOK>
-    <BOOK title="Microsoft Office Word 2007 for Dummies">
+    <BOOK title="Word 2000 for Microsoft for Dummies">
         <AUTHOR>
+            <FIRST_NAME>Dan</FIRST_NAME>
             <LAST_NAME>Gookin</LAST_NAME>
         </AUTHOR>
+        <AUTHOR>
+            <LAST_NAME>Weverka</LAST_NAME>
+        </AUTHOR>
         <PUBLISHER>
-            <ISBN>0470036583</ISBN>
+            <ISBN>0764504487</ISBN>
         </PUBLISHER>
         <PUB_DATE>
-            <MONTH>December</MONTH>
-            <YEAR>2006</YEAR>
+            <YEAR>1994</YEAR>
         </PUB_DATE>
-        <LoC_NUM></LoC_NUM>
+        <LoC_NUM>99061124</LoC_NUM>
     </BOOK>
 </CATALOG>

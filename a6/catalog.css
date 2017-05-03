@@ -1,35 +1,72 @@
 CATALOG {
+    display: block;
+    font-family: sans-serif;
+}
 
+CATALOG:before {
+    font-size: 27pt;
+    font-weight: bold;
+    content:"Important Works of Literature";
+    display: block;
+    margin: 15px;
 }
 
 BOOK {
-
+    font-size: 10pt;
+    display: block;
+    margin: 15px;
 }
 
-TITLE {
+BOOK:before {
+    font-size: 16pt;
+    font-weight: bold;
+    display: block;
+    content: attr(title);
+}
 
+
+
+AUTHOR:before {
+    font-weight: bold;
+    content: "Author: ";
 }
 
 AUTHOR {
-
+    display: block;
 }
 
-PUBLISHER {
-
+NAME:before {
+    font-weight: bold;
+    content: "Publisher: ";
 }
 
 NAME {
+    display: block;
+}
 
+ISBN:before {
+    font-weight: bold;
+    content: "ISBN: ";
 }
 
 ISBN {
+    display: block;
+}
 
+PUB_DATE:before {
+    font-weight: bold;
+    content: "Publication Date: ";
 }
 
 PUB_DATE {
+    display: block;
+}
 
+LoC_NUM:before {
+    font-weight: bold;
+    content: "Library of Congress #: ";
 }
 
 LoC_NUM {
-
+    display: block;
 }
