@@ -2,14 +2,42 @@
 <!DOCTYPE CATALOG SYSTEM "http://ice.truman.edu/~jen1141/a6/catalog.dtd">
 
 <CATALOG>
-    <BOOK>
-        <TITLE></TITLE>
-        <AUTHOR first_name="" last_name=""></AUTHOR>
+    <BOOK title="Waiting For Godot">
+        <AUTHOR>
+            <FIRST_NAME>Samuel</FIRST_NAME>
+            <LAST_NAME>Beckett</LAST_NAME>
+        </AUTHOR>
+        <PUB_DATE>
+            <YEAR>1952</YEAR>
+        </PUB_DATE>
+        <LoC_NUM>80470834</LoC_NUM>
+    </BOOK>
+    <BOOK title="Goodnight Moon">
+        <AUTHOR>
+            <FIRST_NAME>Margaret Wise</FIRST_NAME>
+            <LAST_NAME>Brown</LAST_NAME>
+        </AUTHOR>
         <PUBLISHER>
-            <NAME></NAME>
+            <NAME>Harper</NAME>
             <ISBN></ISBN>
         </PUBLISHER>
-        <PUB_DATE month="" year=""></PUB_DATE>
+        <PUB_DATE>
+            <MONTH>September</MONTH>
+            <YEAR>1947</YEAR>
+        </PUB_DATE>
+        <LoC_NUM>98168838</LoC_NUM>
+    </BOOK>
+    <BOOK title="Microsoft Office Word 2007 for Dummies">
+        <AUTHOR>
+            <LAST_NAME>Gookin</LAST_NAME>
+        </AUTHOR>
+        <PUBLISHER>
+            <ISBN>0470036583</ISBN>
+        </PUBLISHER>
+        <PUB_DATE>
+            <MONTH>December</MONTH>
+            <YEAR>2006</YEAR>
+        </PUB_DATE>
         <LoC_NUM></LoC_NUM>
     </BOOK>
 </CATALOG>
