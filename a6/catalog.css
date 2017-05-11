@@ -24,8 +24,6 @@ BOOK:before {
     content: attr(title);
 }
 
-
-
 AUTHOR:before {
     font-weight: bold;
     content: "Author: ";

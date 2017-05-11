@@ -25,7 +25,7 @@
           <div class="form-group"><label>Door Price <span class="required">*</span></label><input type="text" name="doorPrice" id="doorPrice" class="" required /></div>
           <div class="form-group"><label>Crowd Size</label><input type="text" name="crowdSize" id="crowdSize" class="" /></div>
           <div class="form-group"><label>$ Made</label><input type="text" name="profit" id="profit" class="" /></div>
-          <div class="form-group"><label>Potluck? </label><input type="checkbox" name="potluck" value="yes" id="potluck" class="" /></div>
+           <!-- <div class="form-group"><label>Potluck? </label><input type="checkbox" name="potluck" value="yes" id="potluck" class="" /></div> -->
           <div class="form-group"><label>Planned By <span class="required">*</span></label><input type="text" name="plannedBy" id="plannedBy" class="" required /></div>
 
           <div class="form-group">
@@ -48,14 +48,14 @@
             <label>What could have been better? <span class="required">*</span></label><br/>
               <textarea name="wentBadly" id="wentBadly" class="" required ></textarea><br/>
           </div>
-          <div class="form-group">
+          <div class="form-group playedAtShow">
             <label>Who played at the show? </label>
 END;
             populate_bands_available();
 echo <<<END
 
           </div>
-          <span class="addAnother">+ another band</span>
+          <div class="addAnother">+ another band</div>
           <input type="hidden" name="go" value="process">
           <input type="submit" name="submit" value="Let's Go"/>
         </form>
@@ -72,7 +72,7 @@ END;
         $theme = $_POST['theme'];
         $moneyMade = $_POST['profit'];
         $doorPrice = $_POST['doorPrice'];
-        $potluck = true;
+        // $potluck = true;
         $plannedBy = $_POST['plannedBy'];
         $cohesiveness = $_POST['cohesiveness'];
         $advertisement = $_POST['advertisement'];
@@ -87,8 +87,8 @@ END;
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // prepare sql and bind parameters
-            $stmt = $conn->prepare("INSERT INTO event (showDate, showName, fbLink, crowdSize, theme, location, moneyMade, doorPrice, potluck, plannedBy, cohesiveness, advertisement, wentWell, wentBad)
-            VALUES (:showDate, :showName, :fbLink, :crowdSize, :theme, :location, :moneyMade, :doorPrice, :potluck, :plannedBy, :cohesiveness, :advertisement, :wentWell, :wentBad);
+            $stmt = $conn->prepare("INSERT INTO event (showDate, showName, fbLink, crowdSize, theme, location, moneyMade, doorPrice, plannedBy, cohesiveness, advertisement, wentWell, wentBad)
+            VALUES (:showDate, :showName, :fbLink, :crowdSize, :theme, :location, :moneyMade, :doorPrice, :plannedBy, :cohesiveness, :advertisement, :wentWell, :wentBad);
             INSERT INTO show_band (showID, bandID) VALUES (LAST_INSERT_ID(), :bandID)");
             $stmt->bindParam(':showName', $showName);
             $stmt->bindParam(':showDate', $showDate);
@@ -98,7 +98,7 @@ END;
             $stmt->bindParam(':theme', $theme);
             $stmt->bindParam(':moneyMade', $moneyMade);
             $stmt->bindParam(':doorPrice', $doorPrice);
-            $stmt->bindParam(':potluck', $potluck);
+            // $stmt->bindParam(':potluck', $potluck);
             $stmt->bindParam(':plannedBy', $plannedBy);
             $stmt->bindParam(':cohesiveness', $cohesiveness);
             $stmt->bindParam(':advertisement', $advertisement);
@@ -117,7 +117,7 @@ END;
         // end the DB connection.
         $conn = null;
 
-        echo "<p>Success!!!</p>";
+        echo "<p>Success!!! See all of the shows <a href='dispShows.php'>here</a>.</p>";
     }
 ?>
 

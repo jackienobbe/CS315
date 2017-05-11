@@ -27,8 +27,8 @@
                     </ul>
                     <form action='$_SERVER[PHP_SELF]' method='post'>
                         <input type='hidden' value={$row['showID']} />
-                        <button class='edit'>Edit Show</button>
-                        <button class='delete'>Delete Show</button>
+                        <!-- <button class='edit'>Edit Show</button>
+                        <button class='delete'>Delete Show</button> -->
                     </form>
                   </div>
                 </div>";

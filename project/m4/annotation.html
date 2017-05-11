@@ -9,14 +9,19 @@
     <h1>Milestone 4 Annotation</h1>
     <h2>Introductory Notes </h2>
        <ul>
-         <li>Due: 22 April 2017</li>
-         <li>Last Modified: 19 April 2017</li>
+         <li>Due: 28 April 2017</li>
+         <li>Last Modified: 10 May 2017</li>
          <li>Milestone Link: <a href="http://ice.truman.edu/~jen1141/m4/index.php">Aqua-Archive</a></li>
        </ul>
-    <h2>MySQL</h2>
+    <h2>Security Issues</h2>
+    <p>Potential security issues at this time include having unwanted users access the site and submit information. This can be solved with a log in system that allows users access to certain pages, and denies it to others. (This is kind of here, but not perfect). Another issue is SQL injection, where users may try to maliciously manipulate the database by submitting SQL statements. This is solved by binding the user input into the query via the "->bindParam" method, which adequately formats the input to not tamper with the form process. Another potential issue is HTML injection. This can be solved by calling the function htmlspecialcharacters() on the date before displaying it to the page (or submitting it to the database).
+    </p>
+    <h2>New Additions</h2>
     <ul>
-        <li></li>
+        <li>PHP was used to submit the newBand and newShow forms, and then insert them in to the database. </li>
+        <li>PHP and SQL were also used in conjunction to slect from the database and display each <a href="dispShows.phps">event</a> or <a href="dispBands.phps">band</a> with their details. </li>
     </ul>
+
 
    <h2>Source code for all pages in the project</h2>
      <ul>

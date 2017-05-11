@@ -21,8 +21,8 @@
                         <li><label>Music Quality </label> {$row['quality']}/5</li>
                         <li><label>Energy </label> {$row['energy']}/5</li>
                     </ul>
-                    <button class='edit'>Edit Band</button>
-                    <button class='delete'>Delete Band</button>
+                    <!-- <button class='edit'>Edit Band</button>
+                    <button class='delete'>Delete Band</button> -->
                   </div>
                 </div>";
         }

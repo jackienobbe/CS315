@@ -82,14 +82,14 @@ else: ?> -->
                 <option value="surf">surf</option>
                 <option value="techno">techno</option>
               </select><br/>
-              <div class="blocking" name="genres" placeholder="genres">
+              <!--<div class="blocking" name="genres" placeholder="genres">
                 <div class="insertedBlocks">
                     <div class="blockingInput" contenteditable="true">
-                    
+
                     </div>
                 </div>
 
-              </div>
+              </div> -->
             </div>
           <input type="hidden" name="dateAdded"  value="<?php Date() ?>" />
           <input type="hidden" name="go" value="process">
@@ -139,7 +139,7 @@ END;
         // end the DB connection.
         $conn = null;
 
-        echo "<p>Success!!!</p>";
+        echo "<p>Success!!! See all of the bands <a href='dispBands.php'>here</a>. <3</p>";
     }
 ?>
 
